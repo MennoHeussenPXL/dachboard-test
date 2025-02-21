@@ -26,7 +26,7 @@ export default defineComponent({
 }
 
 .main-content {
-  margin-left: 250px;
+
   padding: 2rem;
   min-height: 100vh;
   transition: margin-left 0.3s ease;

@@ -27,7 +27,9 @@ body {
 }
 
 #app {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 20px; /* Add padding to the app container */
 }
 
 h1 {

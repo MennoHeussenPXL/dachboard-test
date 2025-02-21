@@ -1,8 +1,8 @@
 <script>
 import { defineComponent } from 'vue';
-import { 
-  HomeIcon, 
-  UsersIcon, 
+import {
+  HomeIcon,
+  UsersIcon,
   DocumentTextIcon,
   ChevronLeftIcon,
   ChevronRightIcon
@@ -23,7 +23,8 @@ export default defineComponent({
       navigation: [
         { name: 'Dashboard', path: '/', icon: HomeIcon },
         { name: 'Users', path: '/users', icon: UsersIcon },
-        { name: 'Posts', path: '/posts', icon: DocumentTextIcon }
+        { name: 'Grafiek', path: '/Grafiek', icon: DocumentTextIcon },
+        { name: 'Admins', path: '/admins', icon: UsersIcon } // Dit is toegevoegd
       ]
     };
   },
@@ -44,7 +45,7 @@ export default defineComponent({
         <ChevronRightIcon v-else class="w-6 h-6" />
       </button>
     </div>
-    
+
     <ul class="nav-links">
       <li v-for="item in navigation" :key="item.path">
         <router-link :to="item.path" class="nav-link">
@@ -58,7 +59,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .sidebar {
-  width: 250px;
+  width: 200px;
   height: 100vh;
   background-color: #1a1a1a;
   color: white;
@@ -106,6 +107,10 @@ export default defineComponent({
   padding: 1rem 0;
   margin: 0;
 }
+.nav-link svg {
+  width: 32px;
+  height: 32px;
+}
 
 .nav-link {
   display: flex;
@@ -114,6 +119,7 @@ export default defineComponent({
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   gap: 0.75rem;
+  i
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
