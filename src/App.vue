@@ -1,16 +1,23 @@
-<script setup lang="ts">
-import Dashboard from './components/Dashboard.vue';
+<script setup>
+import Navigation from './components/Navigation.vue';
+import TopNavigation from './components/TopNavigation.vue';
 </script>
 
 <template>
-  <Dashboard />
+  <div class="app">
+    <TopNavigation />
+    <Navigation />
+    <main class="main-content">
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
 <style>
 :root {
-  --primary-color: #646cff;
-  --text-color: #213547;
-  --background-color: #f5f5f5;
+  --primary-color: #3b82f6;
+  --text-color: #111827;
+  --background-color: #f3f4f6;
 }
 
 * {
@@ -26,16 +33,13 @@ body {
   background-color: var(--background-color);
 }
 
-#app {
-  height: 100%;
-  width: 100%;
-  padding: 20px; /* Add padding to the app container */
+.app {
+  min-height: 100vh;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 600;
+h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
+  margin: 0;
 }
 
 a {
@@ -45,5 +49,10 @@ a {
 
 button {
   cursor: pointer;
+}
+
+.main-content {
+  min-height: 100vh;
+  background-color: var(--background-color);
 }
 </style>
